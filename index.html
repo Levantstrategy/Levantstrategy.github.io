@@ -3,323 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 WHACK WELCOME TO HANI! 🎉</title>
+    <title>Levant Strategic Centre - Research & Analysis</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comic+Neue:wght@700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --forest-green: #264D3B;
+            --sandstone-beige: #D5CBB2;
+            --slate-blue: #4C5D73;
+            --burnt-orange: #D97C41;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
         }
         
         body {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #6c5ce7, #fd79a8);
-            background-size: 400% 400%;
-            animation: rainbowBg 3s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            font-family: 'Comic Neue', cursive;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--slate-blue);
         }
         
-        @keyframes rainbowBg {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--forest-green);
         }
         
-        .container {
-            text-align: center;
-            position: relative;
-            z-index: 10;
+        /* Navigation */
+        .navbar {
+            background-color: var(--forest-green) !important;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(38, 77, 59, 0.1);
         }
         
-        .main-text {
-            font-family: 'Fredoka One', cursive;
-            font-size: clamp(3rem, 15vw, 12rem);
-            color: #fff;
-            text-shadow: 
-                0 0 20px #ff00ff,
-                0 0 40px #00ffff,
-                0 0 60px #ffff00,
-                5px 5px 0px #000;
-            animation: 
-                bounce 0.8s ease-in-out infinite alternate,
-                colorShift 2s ease-in-out infinite,
-                shake 0.1s ease-in-out infinite;
-            margin-bottom: 2rem;
-            transform-origin: center;
-        }
-        
-        @keyframes bounce {
-            from { transform: scale(1) rotate(-2deg); }
-            to { transform: scale(1.1) rotate(2deg); }
-        }
-        
-        @keyframes colorShift {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(-2deg); }
-            25% { transform: translateX(-2px) translateY(-1px) rotate(-1deg); }
-            50% { transform: translateX(2px) translateY(1px) rotate(1deg); }
-            75% { transform: translateX(-1px) translateY(2px) rotate(2deg); }
-        }
-        
-        .subtitle {
-            font-size: clamp(1rem, 4vw, 2.5rem);
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            animation: pulse 2s ease-in-out infinite;
-            margin-bottom: 3rem;
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--white) !important;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.05); }
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
         }
         
-        .emoji-rain {
+        .navbar-nav .nav-link:hover {
+            color: var(--sandstone-beige) !important;
+        }
+        
+        .dropdown-menu {
+            background-color: var(--white);
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-item {
+            color: var(--slate-blue);
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--sandstone-beige);
+            color: var(--forest-green);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--slate-blue) 0%, var(--forest-green) 100%);
+            color: var(--white);
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .hero .lead {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c26a35;
+            border-color: #c26a35;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(217, 124, 65, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--burnt-orange);
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             overflow: hidden;
         }
         
-        .emoji {
-            position: absolute;
-            font-size: 2rem;
-            animation: fall linear infinite;
-            opacity: 0.8;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        .click-me {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
+        .card-header {
+            background-color: var(--forest-green);
+            color: var(--white);
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1.5rem;
-            font-family: 'Fredoka One', cursive;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: wiggle 1s ease-in-out infinite;
+            padding: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        /* Research Pillars */
+        .pillar-card {
+            background: var(--white);
+            border-left: 4px solid var(--burnt-orange);
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-card:hover {
+            border-left-color: var(--forest-green);
+        }
+        
+        /* News & Events */
+        .news-item, .event-item {
+            border-bottom: 1px solid var(--sandstone-beige);
+            padding: 1.5rem 0;
+        }
+        
+        .news-item:last-child, .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date, .event-date {
+            color: var(--burnt-orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--forest-green);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer h5 {
+            color: var(--sandstone-beige);
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--sandstone-beige);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
             transition: all 0.3s ease;
-            margin: 1rem;
         }
         
-        .click-me:hover {
-            transform: scale(1.2) rotate(5deg);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        .social-links a:hover {
+            background-color: var(--burnt-orange);
+            transform: translateY(-2px);
         }
         
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
         }
         
-        .party-mode {
-            animation: partyTime 0.1s ease-in-out infinite !important;
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
         }
         
-        @keyframes partyTime {
-            0% { transform: scale(1) rotate(0deg); filter: hue-rotate(0deg); }
-            25% { transform: scale(1.1) rotate(2deg); filter: hue-rotate(90deg); }
-            50% { transform: scale(0.9) rotate(-2deg); filter: hue-rotate(180deg); }
-            75% { transform: scale(1.05) rotate(1deg); filter: hue-rotate(270deg); }
-            100% { transform: scale(1) rotate(0deg); filter: hue-rotate(360deg); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .hidden-message {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
-            color: #fff;
-            padding: 1rem;
-            border-radius: 20px;
-            font-size: 1.2rem;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .stats-section {
+            background-color: var(--sandstone-beige);
         }
         
-        .show-message {
-            opacity: 1;
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--slate-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <div class="emoji-rain" id="emojiRain"></div>
-    
-    <div class="container">
-        <h1 class="main-text" id="mainText">HI HANI!!!</h1>
-        <p class="subtitle">🎊 Welcome to the most WHACK website ever! 🎊</p>
-        <button class="click-me" onclick="partyMode()">🎉 PARTY MODE 🎉</button>
-        <button class="click-me" onclick="randomFact()">🤪 RANDOM FACT 🤪</button>
-        <button class="click-me" onclick="dancingText()">💃 MAKE IT DANCE 💃</button>
-    </div>
-    
-    <div class="hidden-message" id="hiddenMessage">
-        You found the secret message! Hani is AWESOME! 🌟
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Levant Strategic Centre</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#about">About Us</a></li>
+                            <li><a class="dropdown-item" href="#mission">Mission & Vision</a></li>
+                            <li><a class="dropdown-item" href="#team">Leadership & Team</a></li>
+                            <li><a class="dropdown-item" href="#advisory">Advisory Board</a></li>
+                            <li><a class="dropdown-item" href="#partners">Partners & Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Research & Analysis
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#research">Research Pillars</a></li>
+                            <li><a class="dropdown-item" href="#publications">Publications Library</a></li>
+                            <li><a class="dropdown-item" href="#insights">Strategic Insights</a></li>
+                            <li><a class="dropdown-item" href="#projects">Ongoing Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Events
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#events">Upcoming Events</a></li>
+                            <li><a class="dropdown-item" href="#archive">Events Archive</a></li>
+                            <li><a class="dropdown-item" href="#conferences">Flagship Conferences</a></li>
+                            <li><a class="dropdown-item" href="#webinars">Webinars & Roundtables</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Newsroom
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#news">Latest News</a></li>
+                            <li><a class="dropdown-item" href="#press">Press Releases</a></li>
+                            <li><a class="dropdown-item" href="#commentary">Expert Commentary</a></li>
+                            <li><a class="dropdown-item" href="#media">Media Appearances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 hero-content">
+                    <h1 class="fade-in">Strategic Analysis for the Modern Middle East</h1>
+                    <p class="lead fade-in">The Levant Strategic Centre provides cutting-edge research, analysis, and insights on geopolitics, security, and emerging challenges across the Middle East and beyond.</p>
+                    <div class="fade-in">
+                        <a href="#research" class="btn btn-primary me-3">Explore Research</a>
+                        <a href="#about" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="250">0</span>
+                        <span class="stat-label">Research Reports</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Countries Covered</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-label">Expert Analysts</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1000">0</span>
+                        <span class="stat-label">Policy Briefs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Pillars Section -->
+    <section id="research" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Pillars</h2>
+                <p class="lead">Our comprehensive research framework covers the most critical aspects of regional security and development</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-shield-alt me-2"></i>Geopolitics & Security</h5>
+                            <p>Analyzing regional power dynamics, security threats, and strategic competition in the Middle East and Eastern Mediterranean.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-globe me-2"></i>Strategic Competition & Global Order</h5>
+                            <p>Examining great power competition and its impact on regional stability and international relations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-users me-2"></i>Middle East Politics & Societies</h5>
+                            <p>Understanding political transformations, social movements, and governance challenges across the region.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-bolt me-2"></i>Energy, Trade & Connectivity</h5>
+                            <p>Researching energy security, trade routes, and economic connectivity in the Eastern Mediterranean.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-microchip me-2"></i>Emerging Technologies & Cybersecurity</h5>
+                            <p>Analyzing the impact of emerging technologies on security, governance, and regional development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card pillar-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-book me-2"></i>Publications & Strategic Insights</h5>
+                            <p>Producing high-quality research outputs, policy briefs, and strategic analyses for policymakers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News & Events -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4"><i class="fas fa-newspaper me-2"></i>Latest News</h3>
+                    <div class="news-item">
+                        <div class="news-date">December 15, 2024</div>
+                        <h5>New Research on Eastern Mediterranean Energy Security</h5>
+                        <p>LSC publishes comprehensive analysis on regional energy cooperation and security challenges.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">December 12, 2024</div>
+                        <h5>Expert Commentary on Regional Developments</h5>
+                        <p>Senior analysts provide insights on recent geopolitical shifts in the Levant region.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">December 10, 2024</div>
+                        <h5>Strategic Partnership Announcement</h5>
+                        <p>LSC announces new collaboration with leading international research institutions.</p>
+                    </div>
+                    <a href="#news" class="btn btn-outline-primary">View All News</a>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="mb-4"><i class="fas fa-calendar me-2"></i>Upcoming Events</h3>
+                    <div class="event-item">
+                        <div class="event-date">January 20, 2025</div>
+                        <h5>Levant Strategic Forum 2025</h5>
+                        <p>Annual flagship conference bringing together regional experts and policymakers.</p>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">January 15, 2025</div>
+                        <h5>Regional Security Dialogue</h5>
+                        <p>High-level roundtable discussion on emerging security challenges in the Eastern Mediterranean.</p>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">January 8, 2025</div>
+                        <h5>Policy Brief Launch Webinar</h5>
+                        <p>Online presentation of our latest research on energy cooperation frameworks.</p>
+                    </div>
+                    <a href="#events" class="btn btn-outline-primary">View All Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Levant Strategic Centre</h2>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h4>Our Mission</h4>
+                    <p>The Levant Strategic Centre is a leading research institution dedicated to providing strategic analysis and policy recommendations on the most pressing challenges facing the Middle East and Eastern Mediterranean regions.</p>
+                    
+                    <h4>Our Vision</h4>
+                    <p>To be the premier source of strategic intelligence and analysis, fostering informed decision-making and promoting stability, prosperity, and cooperation in the region.</p>
+                    
+                    <h4>Our Approach</h4>
+                    <p>We combine rigorous academic research with practical policy experience, delivering actionable insights to governments, institutions, and stakeholders across the region and beyond.</p>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-target me-2"></i>Core Values</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Independent and objective analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Rigorous research methodology</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Policy-relevant insights</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Regional expertise and networks</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Collaborative partnerships</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Innovative thinking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Levant Strategic Centre</h5>
+                    <p>Strategic analysis for the modern Middle East. Providing cutting-edge research and policy insights for a complex region.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Research</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#research">Research Pillars</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#insights">Strategic Insights</a></li>
+                        <li><a href="#projects">Ongoing Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#advisory">Advisory Board</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Events</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#events">Upcoming Events</a></li>
+                        <li><a href="#conferences">Conferences</a></li>
+                        <li><a href="#webinars">Webinars</a></li>
+                        <li><a href="#archive">Events Archive</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#contact">General Inquiries</a></li>
+                        <li><a href="#media">Media Contacts</a></li>
+                        <li><a href="#locations">Office Locations</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Levant Strategic Centre. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#privacy" class="me-3">Privacy Policy</a>
+                    <a href="#terms" class="me-3">Terms of Use</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Emoji rain effect
-        const emojis = ['🎉', '🎊', '✨', '🌟', '💫', '🎈', '🎁', '🚀', '🦄', '🌈', '💎', '🔥', '⚡', '🎯', '🎪'];
-        
-        function createEmoji() {
-            const emoji = document.createElement('div');
-            emoji.className = 'emoji';
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = Math.random() * 100 + '%';
-            emoji.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            emoji.style.animationDelay = Math.random() * 2 + 's';
-            
-            document.getElementById('emojiRain').appendChild(emoji);
-            
-            setTimeout(() => {
-                emoji.remove();
-            }, 5000);
-        }
-        
-        // Create emojis continuously
-        setInterval(createEmoji, 300);
-        
-        let partyActive = false;
-        
-        function partyMode() {
-            const body = document.body;
-            const mainText = document.getElementById('mainText');
-            
-            if (!partyActive) {
-                body.classList.add('party-mode');
-                mainText.classList.add('party-mode');
-                partyActive = true;
-                
-                // Super fast emoji creation during party mode
-                const partyInterval = setInterval(createEmoji, 50);
-                
-                setTimeout(() => {
-                    body.classList.remove('party-mode');
-                    mainText.classList.remove('party-mode');
-                    clearInterval(partyInterval);
-                    partyActive = false;
-                }, 5000);
-            }
-        }
-        
-        const facts = [
-            "Did you know? Hani's awesomeness is visible from space! 🛰️",
-            "Fun fact: This website was powered by pure excitement! ⚡",
-            "Scientific fact: 99% of awesome people are named Hani! 🧪",
-            "Breaking news: Local website becomes too cool for the internet! 📰",
-            "Fact: You just made this website 42% more awesome by visiting! 📈",
-            "Did you know? Hani is the reason unicorns exist! 🦄",
-            "Plot twist: You're currently the coolest person online! 😎"
-        ];
-        
-        function randomFact() {
-            const message = document.getElementById('hiddenMessage');
-            const randomIndex = Math.floor(Math.random() * facts.length);
-            message.textContent = facts[randomIndex];
-            message.classList.add('show-message');
-            
-            setTimeout(() => {
-                message.classList.remove('show-message');
-            }, 4000);
-        }
-        
-        function dancingText() {
-            const mainText = document.getElementById('mainText');
-            const originalText = mainText.textContent;
-            
-            // Split text into individual letters and make them dance
-            mainText.innerHTML = originalText.split('').map((letter, index) => 
-                `<span style="display: inline-block; animation: letterDance ${Math.random() * 0.5 + 0.5}s ease-in-out infinite; animation-delay: ${index * 0.1}s;">${letter === ' ' ? '&nbsp;' : letter}</span>`
-            ).join('');
-            
-            setTimeout(() => {
-                mainText.textContent = originalText;
-            }, 3000);
-        }
-        
-        // Add some CSS for letter dancing
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes letterDance {
-                0%, 100% { transform: translateY(0) rotate(0deg); }
-                25% { transform: translateY(-20px) rotate(5deg); }
-                50% { transform: translateY(10px) rotate(-5deg); }
-                75% { transform: translateY(-10px) rotate(3deg); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Surprise click anywhere effect
-        document.addEventListener('click', function(e) {
-            if (e.target.tagName !== 'BUTTON') {
-                const surpriseEmoji = document.createElement('div');
-                surpriseEmoji.style.position = 'fixed';
-                surpriseEmoji.style.left = e.clientX + 'px';
-                surpriseEmoji.style.top = e.clientY + 'px';
-                surpriseEmoji.style.fontSize = '2rem';
-                surpriseEmoji.style.pointerEvents = 'none';
-                surpriseEmoji.style.zIndex = '1000';
-                surpriseEmoji.textContent = '💥';
-                surpriseEmoji.style.animation = 'explode 1s ease-out forwards';
-                
-                document.body.appendChild(surpriseEmoji);
-                
-                setTimeout(() => {
-                    surpriseEmoji.remove();
-                }, 1000);
-            }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-        
-        // Add explosion animation
-        const explosionStyle = document.createElement('style');
-        explosionStyle.textContent = `
-            @keyframes explode {
-                0% { transform: scale(0) rotate(0deg); opacity: 1; }
-                50% { transform: scale(1.5) rotate(180deg); opacity: 0.8; }
-                100% { transform: scale(3) rotate(360deg); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(explosionStyle);
-        
-        // Welcome sound effect (optional - user needs to interact first)
-        function playWelcomeSound() {
-            // You can add audio here if you want sound effects
-            console.log("🎵 *WHACK SOUND EFFECTS* 🎵");
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current);
+                }, 30);
+            });
         }
-        
-        // Auto-party mode after 5 seconds
-        setTimeout(() => {
-            if (!partyActive) {
-                partyMode();
-            }
-        }, 5000);
+
+        // Intersection Observer for counter animation
+        const statsSection = document.querySelector('.stats-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Add active class to current navigation item
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize tooltips if needed
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Newsletter subscription (placeholder)
+        function subscribeNewsletter() {
+            alert('Newsletter subscription functionality would be implemented here.');
+        }
+
+        // Search functionality (placeholder)
+        function performSearch() {
+            alert('Search functionality would be implemented here.');
+        }
     </script>
 </body>
 </html> 
