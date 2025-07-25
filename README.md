@@ -43,8 +43,8 @@ The website follows a comprehensive sitemap structure:
 ## ✨ Features
 
 - 📱 **Fully Responsive** - Works perfectly on all devices
-- 🎯 **Interactive Elements** - Smooth scrolling, hover effects, animated counters
-- 📊 **Statistics Section** - Showcasing research impact with animated numbers
+- 🎯 **Interactive Elements** - Smooth scrolling, hover effects, animations
+
 - 🔍 **Professional Typography** - Playfair Display + Source Sans Pro fonts
 - 🎨 **Modern Design** - Clean cards, gradients, and professional layouts
 - 📰 **Dynamic Content Areas** - News updates and event listings
@@ -69,7 +69,6 @@ The website follows a comprehensive sitemap structure:
 
 ### JavaScript Functionality
 - Smooth scrolling navigation
-- Animated statistics counters
 - Active navigation highlighting
 - Mobile menu handling
 - Intersection Observer for animations

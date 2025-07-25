@@ -242,30 +242,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
-/* Stats Section */
-.stats-section {
-    background-color: var(--sandstone-beige);
-}
 
-.stat-item {
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--forest-green);
-    display: block;
-}
-
-.stat-label {
-    color: var(--slate-blue);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
 
 /* Custom animations */
 .fade-in {
