@@ -14,15 +14,30 @@ The website uses a carefully selected **Geopolitical Modernism** color palette:
 
 ```
 Levantstrategy/
-├── index.html          # Main HTML structure
+├── index.html          # Coming Soon landing page with video background
+├── home.html           # Main website with full content
 ├── styles.css          # All CSS styles and animations
 ├── script.js           # JavaScript functionality
 └── README.md          # Project documentation
 ```
 
+## 🎬 Two-Page Structure
+
+### Landing Page (`index.html`)
+- **Coming Soon** page with cinematic video background
+- Features world map/strategic analysis themed video from CDN
+- Same color palette and branding as main site
+- "Enter Preview Site" button leads to full website
+- Animated entrance effects and interactive elements
+
+### Main Website (`home.html`)
+- Complete website with all sections and functionality
+- Full navigation with dropdown menus
+- Research pillars, news, events, and about sections
+
 ## 🌐 Website Sections
 
-The website follows a comprehensive sitemap structure:
+The main website follows a comprehensive sitemap structure:
 
 ### Main Navigation
 - **Home** - Hero section with mission statement and statistics

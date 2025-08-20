@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levant Strategic Centre - Research & Analysis</title>
+    <title>Levant Strategic Centre - Coming Soon</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,317 +11,322 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --forest-green: #264D3B;
+            --sandstone-beige: #D5CBB2;
+            --slate-blue: #4C5D73;
+            --burnt-orange: #D97C41;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(38, 77, 59, 0.85), rgba(76, 93, 115, 0.85));
+            z-index: 1;
+        }
+
+        /* Main Content */
+        .coming-soon {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .coming-soon h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .coming-soon p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .launch-date {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--sandstone-beige);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-notify {
+            background-color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+            color: var(--white);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(217, 124, 65, 0.4);
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .btn-notify:hover {
+            background-color: #c26a35;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(217, 124, 65, 0.6);
+            color: var(--white);
+        }
+
+        .features {
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .feature-item {
+            display: inline-block;
+            margin: 0 2rem 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--burnt-orange);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .feature-item span {
+            font-size: 0.9rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 1rem;
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--burnt-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .coming-soon h1 {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon p {
+                font-size: 1.2rem;
+            }
+
+            .feature-item {
+                margin: 0 1rem 1rem;
+                padding: 0.75rem;
+            }
+
+            .btn-notify {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Levant Strategic Centre</a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#about">About Us</a></li>
-                            <li><a class="dropdown-item" href="#mission">Mission & Vision</a></li>
-                            <li><a class="dropdown-item" href="#team">Leadership & Team</a></li>
-                            <li><a class="dropdown-item" href="#advisory">Advisory Board</a></li>
-                            <li><a class="dropdown-item" href="#partners">Partners & Opportunities</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Research & Analysis
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#research">Research Pillars</a></li>
-                            <li><a class="dropdown-item" href="#publications">Publications Library</a></li>
-                            <li><a class="dropdown-item" href="#insights">Strategic Insights</a></li>
-                            <li><a class="dropdown-item" href="#projects">Ongoing Projects</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Events
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#events">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="#archive">Events Archive</a></li>
-                            <li><a class="dropdown-item" href="#conferences">Flagship Conferences</a></li>
-                            <li><a class="dropdown-item" href="#webinars">Webinars & Roundtables</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Newsroom
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#news">Latest News</a></li>
-                            <li><a class="dropdown-item" href="#press">Press Releases</a></li>
-                            <li><a class="dropdown-item" href="#commentary">Expert Commentary</a></li>
-                            <li><a class="dropdown-item" href="#media">Media Appearances</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/vimeo/459663369/world-39394.mp4?width=1280&hash=b6d7e9b3a7e89eea16ce5e6e4e5b3b0de66e0b6c" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-global-business-world-map-with-network-connections-39392-large.mp4" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Video Overlay -->
+    <div class="video-overlay"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Main Content -->
+    <div class="coming-soon">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 hero-content">
-                    <h1 class="fade-in">Strategic Analysis for the Modern Middle East</h1>
-                    <p class="lead fade-in">The Levant Strategic Centre provides cutting-edge research, analysis, and insights on geopolitics, security, and emerging challenges across the Middle East and beyond.</p>
-                    <div class="fade-in">
-                        <a href="#research" class="btn btn-primary me-3">Explore Research</a>
-                        <a href="#about" class="btn btn-outline-light">Learn More</a>
-                    </div>
+            <div class="logo pulse">
+                Levant Strategic Centre
+            </div>
+            
+            <h1>Coming Soon</h1>
+            
+            <p>We're preparing something extraordinary. A premier destination for strategic analysis, research, and insights on the modern Middle East and Eastern Mediterranean.</p>
+            
+            <div class="launch-date">
+                <i class="fas fa-calendar-alt me-2"></i>
+                Launching Q1 2025
+            </div>
+            
+            <a href="home.html" class="btn-notify">
+                <i class="fas fa-rocket me-2"></i>
+                Enter Preview Site
+            </a>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Strategic Analysis</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe-middle-east"></i>
+                    <span>Regional Expertise</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Policy Research</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Expert Commentary</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-
-
-    <!-- Research Pillars Section -->
-    <section id="research" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Research Pillars</h2>
-                <p class="lead">Our comprehensive research framework covers the most critical aspects of regional security and development</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-shield-alt me-2"></i>Geopolitics & Security</h5>
-                            <p>Analyzing regional power dynamics, security threats, and strategic competition in the Middle East and Eastern Mediterranean.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-globe me-2"></i>Strategic Competition & Global Order</h5>
-                            <p>Examining great power competition and its impact on regional stability and international relations.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-users me-2"></i>Middle East Politics & Societies</h5>
-                            <p>Understanding political transformations, social movements, and governance challenges across the region.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-bolt me-2"></i>Energy, Trade & Connectivity</h5>
-                            <p>Researching energy security, trade routes, and economic connectivity in the Eastern Mediterranean.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-microchip me-2"></i>Emerging Technologies & Cybersecurity</h5>
-                            <p>Analyzing the impact of emerging technologies on security, governance, and regional development.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card pillar-card">
-                        <div class="card-body">
-                            <h5><i class="fas fa-book me-2"></i>Publications & Strategic Insights</h5>
-                            <p>Producing high-quality research outputs, policy briefs, and strategic analyses for policymakers.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Latest News & Events -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="mb-4"><i class="fas fa-newspaper me-2"></i>Latest News</h3>
-                    <div class="news-item">
-                        <div class="news-date">December 15, 2024</div>
-                        <h5>New Research on Eastern Mediterranean Energy Security</h5>
-                        <p>LSC publishes comprehensive analysis on regional energy cooperation and security challenges.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">December 12, 2024</div>
-                        <h5>Expert Commentary on Regional Developments</h5>
-                        <p>Senior analysts provide insights on recent geopolitical shifts in the Levant region.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">December 10, 2024</div>
-                        <h5>Strategic Partnership Announcement</h5>
-                        <p>LSC announces new collaboration with leading international research institutions.</p>
-                    </div>
-                    <a href="#news" class="btn btn-outline-primary">View All News</a>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h3 class="mb-4"><i class="fas fa-calendar me-2"></i>Upcoming Events</h3>
-                    <div class="event-item">
-                        <div class="event-date">January 20, 2025</div>
-                        <h5>Levant Strategic Forum 2025</h5>
-                        <p>Annual flagship conference bringing together regional experts and policymakers.</p>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date">January 15, 2025</div>
-                        <h5>Regional Security Dialogue</h5>
-                        <p>High-level roundtable discussion on emerging security challenges in the Eastern Mediterranean.</p>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date">January 8, 2025</div>
-                        <h5>Policy Brief Launch Webinar</h5>
-                        <p>Online presentation of our latest research on energy cooperation frameworks.</p>
-                    </div>
-                    <a href="#events" class="btn btn-outline-primary">View All Events</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Levant Strategic Centre</h2>
-            </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h4>Our Mission</h4>
-                    <p>The Levant Strategic Centre is a leading research institution dedicated to providing strategic analysis and policy recommendations on the most pressing challenges facing the Middle East and Eastern Mediterranean regions.</p>
-                    
-                    <h4>Our Vision</h4>
-                    <p>To be the premier source of strategic intelligence and analysis, fostering informed decision-making and promoting stability, prosperity, and cooperation in the region.</p>
-                    
-                    <h4>Our Approach</h4>
-                    <p>We combine rigorous academic research with practical policy experience, delivering actionable insights to governments, institutions, and stakeholders across the region and beyond.</p>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5><i class="fas fa-target me-2"></i>Core Values</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Independent and objective analysis</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Rigorous research methodology</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Policy-relevant insights</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Regional expertise and networks</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Collaborative partnerships</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Innovative thinking</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>Levant Strategic Centre</h5>
-                    <p>Strategic analysis for the modern Middle East. Providing cutting-edge research and policy insights for a complex region.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Research</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#research">Research Pillars</a></li>
-                        <li><a href="#publications">Publications</a></li>
-                        <li><a href="#insights">Strategic Insights</a></li>
-                        <li><a href="#projects">Ongoing Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>About</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#advisory">Advisory Board</a></li>
-                        <li><a href="#partners">Partners</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Events</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#events">Upcoming Events</a></li>
-                        <li><a href="#conferences">Conferences</a></li>
-                        <li><a href="#webinars">Webinars</a></li>
-                        <li><a href="#archive">Events Archive</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#contact">General Inquiries</a></li>
-                        <li><a href="#media">Media Contacts</a></li>
-                        <li><a href="#locations">Office Locations</a></li>
-                        <li><a href="#newsletter">Newsletter</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 Levant Strategic Centre. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#privacy" class="me-3">Privacy Policy</a>
-                    <a href="#terms" class="me-3">Terms of Use</a>
-                    <a href="#accessibility">Accessibility</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect for the overlay
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.video-overlay');
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            });
+
+            // Add entrance animation delay for feature items
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach((item, index) => {
+                item.style.animationDelay = `${1.5 + (index * 0.1)}s`;
+                item.classList.add('fade-in-up');
+            });
+        });
+
+        // Add click effect to buttons
+        document.querySelector('.btn-notify').addEventListener('click', function(e) {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    </script>
 </body>
-</html> 
+</html>
