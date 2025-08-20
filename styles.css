@@ -345,3 +345,88 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 80px;
     }
 } 
+
+/* Research Carousel Styles */
+#researchCarousel {
+    margin: 3rem 0 5rem 0;
+    padding: 0 60px;
+}
+
+.research-card {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--slate-blue) 100%);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(38, 77, 59, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.research-icon-container {
+    background: rgba(213, 203, 178, 0.2);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid rgba(213, 203, 178, 0.3);
+}
+
+#researchCarousel .carousel-indicators {
+    margin-bottom: -40px;
+    position: static;
+    margin-top: 2rem;
+}
+
+#researchCarousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--sandstone-beige);
+    background-color: transparent;
+    opacity: 0.6;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+}
+
+#researchCarousel .carousel-indicators button.active {
+    background-color: var(--sandstone-beige);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#researchCarousel .carousel-control-prev,
+#researchCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: var(--burnt-orange);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#researchCarousel .carousel-control-prev {
+    left: 10px;
+}
+
+#researchCarousel .carousel-control-next {
+    right: 10px;
+}
+
+#researchCarousel .carousel-control-prev:hover,
+#researchCarousel .carousel-control-next:hover {
+    opacity: 1;
+    background: var(--burnt-orange);
+    transform: translateY(-50%) scale(1.1);
+}
+
+#researchCarousel .carousel-control-prev-icon,
+#researchCarousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
