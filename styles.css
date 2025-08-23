@@ -61,17 +61,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar Logo */
 .navbar-logo {
-    margin-left: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .navbar-logo-img {
-    height: 60px;
+    height: 50px;
     width: auto;
     transition: all 0.3s ease;
-    max-width: 120px;
+    max-width: 100px;
     object-fit: contain;
 }
 
@@ -337,12 +336,17 @@ h1, h2, h3, h4, h5, h6 {
     
     /* Mobile navbar logo adjustments */
     .navbar-logo {
-        margin-left: 0.5rem;
+        margin-right: 0.75rem !important;
     }
     
     .navbar-logo-img {
-        height: 45px;
-        max-width: 80px;
+        height: 40px;
+        max-width: 70px;
+    }
+    
+    /* Mobile brand text adjustment */
+    .navbar-brand {
+        font-size: 1.4rem !important;
     }
     
     /* Mobile collapsible cards adjustments */
@@ -381,6 +385,20 @@ h1, h2, h3, h4, h5, h6 {
 
 #comprehensive-analysis.section {
     padding: 1rem 0 5rem 0;
+}
+
+/* Research card images */
+.collapsible-card .card-body img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border: 1px solid rgba(38, 77, 59, 0.1);
+}
+
+.collapsible-card .card-body img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
 }
 
 .collapsible-header {
