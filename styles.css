@@ -344,7 +344,81 @@ h1, h2, h3, h4, h5, h6 {
         height: 45px;
         max-width: 80px;
     }
+    
+    /* Mobile collapsible cards adjustments */
+    .collapsible-header h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .collapsible-header p {
+        font-size: 0.9rem;
+    }
+    
+    .collapse-icon {
+        font-size: 1rem;
+        min-width: 20px;
+    }
+    
+    .collapsible-header .d-flex {
+        align-items: flex-start;
+    }
+    
+    .collapsible-header:hover {
+        transform: none; /* Disable hover transform on mobile */
+    }
 } 
+
+/* Collapsible Cards Styles */
+.collapsible-card {
+    transition: all 0.3s ease;
+}
+
+/* Reduce spacing between research cards */
+#latest-update.section {
+    padding: 3rem 0 1rem 0;
+}
+
+#comprehensive-analysis.section {
+    padding: 1rem 0 5rem 0;
+}
+
+.collapsible-header {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.collapsible-header:hover {
+    background-color: rgba(38, 77, 59, 0.9) !important;
+    transform: translateY(-1px);
+}
+
+.collapse-icon {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.collapsible-header[aria-expanded="true"] .collapse-icon {
+    transform: rotate(180deg);
+}
+
+.collapsible-header[aria-expanded="false"] .collapse-icon {
+    transform: rotate(0deg);
+}
+
+.collapsible-card .card-body {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced animation for collapse */
+.collapse {
+    transition: height 0.4s ease;
+}
+
+.collapsing {
+    transition: height 0.4s ease;
+}
 
 /* Research Carousel Styles */
 #researchCarousel {

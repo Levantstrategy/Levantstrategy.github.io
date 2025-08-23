@@ -140,12 +140,56 @@ const LSC = {
 
     hideLoader: function() {
         document.body.classList.remove('loading');
+    },
+
+    // Initialize collapsible cards functionality
+    initializeCollapsibleCards: function() {
+        const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+        
+        collapsibleHeaders.forEach(header => {
+            // Add click event listeners for smooth animations
+            header.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-bs-target'));
+                const icon = this.querySelector('.collapse-icon');
+                
+                // Toggle aria-expanded for CSS transitions
+                setTimeout(() => {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', isExpanded);
+                }, 50);
+            });
+
+            // Add hover effects
+            header.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 8px 25px rgba(38, 77, 59, 0.2)';
+            });
+
+            header.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Listen for collapse events to update icons
+        document.addEventListener('shown.bs.collapse', function(e) {
+            const header = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
+            if (header) {
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        document.addEventListener('hidden.bs.collapse', function(e) {
+            const header = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
+            if (header) {
+                header.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
 };
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     LSC.init();
+    LSC.initializeCollapsibleCards();
 });
 
 // Handle window resize
