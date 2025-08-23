@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <img src="logo.png" alt="Levant Strategic Centre Logo" class="img-fluid hero-logo fade-in"
-                        style="max-width: 300px;">
+                        style="max-width: 250px;">
                 </div>
             </div>
         </div>
@@ -203,43 +203,108 @@
     </section>
 
 
-    <!-- Latest News & Events -->
-    <section id="news" class="section bg-light">
+    <!-- Aqaba Forum Stories Section -->
+    <section id="events" class="section bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="mb-4"><i class="fas fa-newspaper me-2"></i>Latest News</h3>
-                    <div class="news-item">
-                        <div class="news-date">July 30, 2025</div>
-                        <h5>LSC Calls for Sustained Dialogue Amid Rising Regional Uncertainty</h5>
-                        <p>The Levant Strategic Centre concluded its inaugural Aqaba Forum for Security and Strategy
-                            roundtable in Amman, calling for sustained interregional dialogue and deeper cooperation to
-                            address evolving security challenges.</p>
-                    </div>
-                    <a href="newsroom.html" class="btn btn-outline-primary">View All News</a>
+            <div class="section-title">
+                <h2><i class="fas fa-calendar me-3"></i>Strategic Events & Initiatives</h2>
+                <p class="lead">Our platforms for regional dialogue and strategic analysis</p>
+            </div>
+            
+            <!-- Events Carousel -->
+            <div id="eventsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card events-story-card">
+                            <div class="card-body">
+                                <span class="badge mb-2" style="background-color: var(--forest-green); color: var(--white);">Flagship Event</span>
+                                <h5 class="card-title">Aqaba Forum for Security and Strategy</h5>
+                                <p class="card-text">Annual platform for strategic exchange bringing together regional experts to address critical security challenges and foster dialogue in the Middle East.</p>
+                                <a href="events.html#aboutForumContent" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card events-story-card">
+                            <div class="card-body">
+                                <span class="badge mb-2" style="background-color: var(--burnt-orange); color: var(--white);">Upcoming</span>
+                                <h5 class="card-title">Jordan Regional Security Forum</h5>
+                                <p class="card-text">Platform for national, regional, and international actors to align strategies on peacebuilding, stability, and regional cooperation.</p>
+                                <a href="events.html" class="btn btn-sm btn-outline-primary">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card events-story-card">
+                            <div class="card-body">
+                                <span class="badge mb-2" style="background-color: var(--slate-blue); color: var(--white);">Partnership</span>
+                                <h5 class="card-title">Japan-Middle East Strategic Dialogue</h5>
+                                <p class="card-text">Cross-regional collaboration linking the Levant with Asia's economic and technological powerhouses for mutual understanding and cooperation.</p>
+                                <a href="events.html" class="btn btn-sm btn-outline-primary">Explore Initiative</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="events.html" class="btn btn-outline-primary btn-lg">View All Events</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-lg-6">
-                    <h3 class="mb-4"><i class="fas fa-calendar me-2"></i>Strategic Initiatives</h3>
-                    <div class="event-item">
-                        <div class="event-date">Recurring</div>
-                        <h5>Aqaba Forum for Security and Strategy</h5>
-                        <p>Annual platform for strategic exchange bringing together regional experts to address critical
-                            security challenges and foster dialogue.</p>
+    <!-- Latest News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-newspaper me-3"></i>Latest News</h2>
+                <p class="lead">Press releases and expert commentary from the Levant Strategic Centre</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Single News Story -->
+                    <article class="news-story-card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="news-meta mb-2">
+                                        <span class="badge bg-primary me-2">Press Release</span>
+                                        <span class="text-muted small">July 30, 2025</span>
+                                    </div>
+                                    <h5 class="card-title">
+                                        <a href="newsroom.html#aqabaForumRelease" class="text-decoration-none" style="color: var(--forest-green);">
+                                            LSC Calls for Sustained Dialogue Amid Rising Regional Uncertainty
+                                        </a>
+                                    </h5>
+                                    <p class="card-text">The Levant Strategic Centre concluded its inaugural Aqaba Forum for Security and Strategy roundtable in Amman, calling for sustained interregional dialogue and deeper cooperation to address evolving security challenges.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                <div class="text-center p-3">
+                                    <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                                    <a href="newsroom.html#aqabaForumRelease" class="btn btn-outline-primary btn-sm">Read Full Story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <div class="text-center mt-4">
+                        <a href="newsroom.html" class="btn btn-outline-primary btn-lg">View All News</a>
                     </div>
-                    <div class="event-item">
-                        <div class="event-date">Upcoming</div>
-                        <h5>Jordan Regional Security Forum</h5>
-                        <p>Platform for national, regional, and international actors to align strategies on
-                            peacebuilding and stability.</p>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date">Upcoming</div>
-                        <h5>Japan-Middle East Strategic Dialogue</h5>
-                        <p>Cross-regional collaboration linking the Levant with Asia's economic and technological
-                            powerhouses.</p>
-                    </div>
-                    <a href="events.html" class="btn btn-outline-primary">View All Events</a>
                 </div>
             </div>
         </div>

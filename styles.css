@@ -151,6 +151,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5rem 0;
 }
 
+/* Adjust section spacing for stacked layout */
+#research.section {
+    padding: 5rem 0 3rem 0;
+}
+
+#events.section {
+    padding: 3rem 0;
+}
+
+#news.section {
+    padding: 3rem 0 5rem 0;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -371,6 +384,78 @@ h1, h2, h3, h4, h5, h6 {
     .collapsible-header:hover {
         transform: none; /* Disable hover transform on mobile */
     }
+    
+    /* Mobile events carousel adjustments */
+    .events-story-card {
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .events-story-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .events-story-card .card-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .events-story-card .card-text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .events-story-card .badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    /* Mobile news story card adjustments */
+    .news-story-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .news-story-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .news-story-card .card-text {
+        font-size: 0.9rem;
+    }
+    
+    .news-story-card .row .col-md-4 {
+        margin-top: 1rem;
+    }
+    
+    #eventsCarousel {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    #eventsCarousel .carousel-control-prev,
+    #eventsCarousel .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #eventsCarousel .carousel-control-prev {
+        left: 5px;
+    }
+    
+    #eventsCarousel .carousel-control-next {
+        right: 5px;
+    }
+    
+    /* Ensure news stories stack properly on mobile */
+    .news-story-card .col-md-8,
+    .news-story-card .col-md-4 {
+        text-align: center;
+    }
+    
+    .news-story-card .col-md-4 {
+        border-top: 1px solid rgba(76, 93, 115, 0.1);
+        padding-top: 1rem;
+    }
 } 
 
 /* Collapsible Cards Styles */
@@ -385,6 +470,20 @@ h1, h2, h3, h4, h5, h6 {
 
 #comprehensive-analysis.section {
     padding: 1rem 0 5rem 0;
+}
+
+/* Reduce spacing between pages with collapsible cards */
+.section .collapsible-card {
+    margin-bottom: 1rem;
+}
+
+.section:has(.collapsible-card) {
+    padding: 2rem 0 1rem 0;
+}
+
+/* Newsroom specific spacing */
+.section:has(.collapsible-card) {
+    padding: 3rem 0 5rem 0;
 }
 
 /* Research card images */
@@ -436,6 +535,175 @@ h1, h2, h3, h4, h5, h6 {
 
 .collapsing {
     transition: height 0.4s ease;
+}
+
+/* News Story Cards Styles */
+.news-story-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(76, 93, 115, 0.1);
+    overflow: hidden;
+}
+
+.news-story-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.news-story-card .card-body {
+    padding: 2rem;
+}
+
+.news-story-card .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.news-story-card .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.news-story-card .card-title a:hover {
+    color: var(--burnt-orange) !important;
+    transition: color 0.3s ease;
+}
+
+.news-story-card .card-text {
+    color: var(--slate-blue);
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.news-story-card .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* Events Story Carousel Styles */
+#eventsCarousel {
+    margin-bottom: 2rem;
+    padding: 0 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.events-story-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(76, 93, 115, 0.1);
+}
+
+.events-story-card .card-body {
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.events-story-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.events-story-card .card-title {
+    color: var(--forest-green);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-family: 'Playfair Display', serif;
+}
+
+.events-story-card .card-text {
+    color: var(--slate-blue);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.events-story-card .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#eventsCarousel .carousel-indicators {
+    margin-bottom: -20px;
+    position: static;
+    margin-top: 1rem;
+}
+
+#eventsCarousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--forest-green);
+    background-color: transparent;
+    opacity: 0.6;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+
+#eventsCarousel .carousel-indicators button.active {
+    background-color: var(--forest-green);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#eventsCarousel .carousel-control-prev,
+#eventsCarousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background: rgba(38, 77, 59, 0.8);
+    border-radius: 50%;
+    top: 40%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+#eventsCarousel .carousel-control-prev {
+    left: 10px;
+}
+
+#eventsCarousel .carousel-control-next {
+    right: 10px;
+}
+
+#eventsCarousel .carousel-control-prev:hover,
+#eventsCarousel .carousel-control-next:hover {
+    opacity: 1;
+    background: var(--forest-green);
+    transform: translateY(-50%) scale(1.05);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+#eventsCarousel .carousel-control-prev-icon,
+#eventsCarousel .carousel-control-next-icon {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) invert(1);
 }
 
 /* Research Carousel Styles */
