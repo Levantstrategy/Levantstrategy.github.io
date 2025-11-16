@@ -1,0 +1,14 @@
+name: Levant Strategic Centre
+description: Premier destination for strategic analysis, research, and insights on the modern Middle East and Eastern Mediterranean
+url: https://levantstrategy.github.io
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
