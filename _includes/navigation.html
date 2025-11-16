@@ -4,9 +4,9 @@
         <!-- Logo and Brand -->
         <div class="d-flex align-items-center">
             <div class="navbar-logo me-3">
-                <img src="logo.png" alt="Levant Strategic Centre Logo" class="navbar-logo-img">
+                <img src="{{ '/logo.png' | relative_url }}" alt="Levant Strategic Centre Logo" class="navbar-logo-img">
             </div>
-            <a class="navbar-brand" href="home.html">Levant Strategic Centre</a>
+            <a class="navbar-brand" href="{{ '/home.html' | relative_url }}">Levant Strategic Centre</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -16,22 +16,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">Home</a>
+                    <a class="nav-link" href="{{ '/home.html' | relative_url }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="{{ '/aboutus.html' | relative_url }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="research.html">Research</a>
+                    <a class="nav-link" href="{{ '/research.html' | relative_url }}">Research</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
+                    <a class="nav-link" href="{{ '/events.html' | relative_url }}">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="newsroom.html">Newsroom</a>
+                    <a class="nav-link" href="{{ '/newsroom.html' | relative_url }}">Newsroom</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactus.html">Contact</a>
+                    <a class="nav-link" href="{{ '/contactus.html' | relative_url }}">Contact</a>
                 </li>
             </ul>
         </div>
