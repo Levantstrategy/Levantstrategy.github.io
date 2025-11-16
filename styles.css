@@ -464,8 +464,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Reduce spacing between research cards */
-#latest-update.section {
+#lebanon-analysis.section {
     padding: 3rem 0 1rem 0;
+}
+
+#gaza-westbank-analysis.section {
+    padding: 1rem 0 1rem 0;
+}
+
+#latest-update.section {
+    padding: 1rem 0 1rem 0;
 }
 
 #comprehensive-analysis.section {
